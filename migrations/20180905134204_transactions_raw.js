@@ -5,7 +5,7 @@ exports.up = function(knex) {
     table.uuid('uuid');
     table.string('source');
     table.jsonb('data');
-    table.timestamps();
+    table.timestamp('created').defaultTo(knex.fn.now());
   })
 };
 
